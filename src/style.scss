@@ -1,0 +1,75 @@
+.uncommon-ourscience-nav {
+  position: fixed;
+  z-index: 99;
+  bottom: 1.5rem;
+  padding: var(--wp--preset--spacing--outer);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.uncommon-ourscience-nav-item {
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--wp--preset--font-size--body-m);
+  color: var(--wp--preset--color--contrast)!important;
+  border: 1px solid var(--wp--preset--color--contrast);
+  border-radius: 2em;
+  padding: .6em 1.2em .5em 1.2em;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all .3s ease-in-out;
+
+  &.uncommon-ourscience-nav-item--active {
+    transform: rotate(-5deg);
+    background-color: var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--pigment-purple)!important;
+  }
+  &:nth-child(even).uncommon-ourscience-nav-item--active {
+    transform: rotate(5deg);
+  }
+}
+.uncommon-ourscience-content:not(.showing) {
+  display: none;
+}
+.uncommon-ourscience-content.showing {
+  & .uncommon-ourscience-content-hero-title {
+    animation: contentTransitionIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  }
+  & .uncommon-ourscience-content-hero-image-one {
+    animation: imageOneTransitionIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  }
+  & .uncommon-ourscience-content-hero-image-two {
+    animation: imageTwoTransitionIn .5s .2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  }
+}
+@keyframes contentTransitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes imageOneTransitionIn {
+  0% {
+    opacity: 1;
+    transform: translateX(50vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes imageTwoTransitionIn {
+  0% {
+    opacity: 1;
+    transform: translateX(50vw) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-5deg);
+  }
+}

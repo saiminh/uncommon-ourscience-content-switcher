@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/uncommon-ourscience-content-switcher",
+	"version": "0.1.0",
+	"title": "Uncommon Our Science Content Switcher",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"supports": {
+		"html": false
+	},
+  "attributes": {
+    "navItems": {
+      "type": "array",
+      "default": [
+        {
+          "linktext": "I'm a novice"
+        },
+        {
+          "linktext": "I dabble"
+        },
+        {
+          "linktext": "I'm an expert"
+        }
+      ]
+    }
+  },
+	"textdomain": "uncommon-ourscience-content-switcher",
+	"editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
