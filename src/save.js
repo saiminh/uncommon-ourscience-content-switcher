@@ -10,6 +10,7 @@ export default function save({ attributes }) {
               className='uncommon-ourscience-nav-item'
               key={index}
               rel="noopener noreferrer"
+              href={item.linktext.replace(/\s+/g, '-').replace(/'/g, '').toLowerCase()}
             >
               {item.linktext}
             </a>

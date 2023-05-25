@@ -14,11 +14,16 @@
   font-size: var(--wp--preset--font-size--body-m);
   color: var(--wp--preset--color--contrast)!important;
   border: 1px solid var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--gallery-off-white);
   border-radius: 2em;
   padding: .6em 1.2em .5em 1.2em;
   cursor: pointer;
   transform: rotate(0deg);
   transition: all .3s ease-in-out;
+
+  &:active, &:focus {
+    text-decoration: none;
+  }
 
   &.uncommon-ourscience-nav-item--active {
     transform: rotate(-5deg);
@@ -41,6 +46,17 @@
   }
   & .uncommon-ourscience-content-hero-image-two {
     animation: imageTwoTransitionIn .5s .2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  }
+}
+.uncommon-content-has-dark-background{
+  & .uncommon-ourscience-nav-item {
+    background-color: var(--wp--preset--color--contrast)!important;
+    color: var(--wp--preset--color--gallery-off-white)!important;
+    border-color: var(--wp--preset--color--gallery-off-white)!important;
+  }
+  & .uncommon-ourscience-nav-item.uncommon-ourscience-nav-item--active {
+    background-color: var(--wp--preset--color--gallery-off-white)!important;
+    color: var(--wp--preset--color--contrast)!important;
   }
 }
 @keyframes contentTransitionIn {

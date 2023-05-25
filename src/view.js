@@ -15,7 +15,8 @@ function initNav() {
         contentItems[0].classList.add('showing');
 
   navItems.forEach((item, index) => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
       //add class to button
       if ( item.classList.contains('uncommon-ourscience-nav-item--active') ) {
         item.classList.remove('uncommon-ourscience-nav-item--active');
@@ -43,10 +44,10 @@ function initNav() {
       window.scrollTo(0, 0);
 
       //determine if content has contrast background color and then add class to body
-      document.body.classList.contains('uncommon-content-has-background') ? document.body.classList.remove('uncommon-content-has-background') : null;
+      document.body.classList.contains('uncommon-content-has-dark-background') ? document.body.classList.remove('uncommon-content-has-dark-background') : null;
       const contentShowing = document.querySelector('.uncommon-ourscience-content.showing');
       if ( contentShowing.children[0].classList.contains('has-contrast-background-color') ) {
-        document.body.classList.add('uncommon-content-has-background');
+        document.body.classList.add('uncommon-content-has-dark-background');
       } 
     })
   })
